@@ -4,7 +4,7 @@ import { i18nCreateInstanceSync } from "../utils/i18nCreateInstance";
 
 
 
-export const i18nSearch = () => i18nCreateInstanceSync({
+export const i18nSearch = i18nCreateInstanceSync({
   lng: 'en',
   interpolation: {escapeValue: false},
   resources: {
