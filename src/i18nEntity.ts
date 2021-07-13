@@ -1,18 +1,20 @@
-import { ENTITY_TRANSLATIONS as EN_ENTITY_TRANSLATIONS } from "../Translations/en/Entity";
-import { ENTITY_TRANSLATIONS as DE_ENTITY_TRANSLATIONS } from "../Translations/de/Entity";
+
+import { Translations as EN } from "../Translations/en";
+import { Translations as DE} from "../Translations/de";
 import { i18nCreateInstanceSync } from "../utils/i18nCreateInstance";
 
 
 
-export const i18nCommon = () => i18nCreateInstanceSync({
+export const i18nEntity = i18nCreateInstanceSync({
   lng: 'en',
   interpolation: {escapeValue: false},
   resources: {
     en: {
-      translation: EN_ENTITY_TRANSLATIONS
+      translation: EN.Entity
     },
     de: {
-      translation: DE_ENTITY_TRANSLATIONS
+      translation: DE.Entity
     }
-  }  
+  },
+  fallbackLng: 'de'  
 })

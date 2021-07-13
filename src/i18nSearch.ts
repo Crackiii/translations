@@ -1,18 +1,19 @@
-import { SEARCH_TRANSLATIONS as EN_SEARCH_TRANSLATIONS } from "../Translations/en/Search";
-import { SEARCH_TRANSLATIONS as DE_SEARCH_TRANSLATIONS } from "../Translations/de/Search";
+import { Translations as EN } from "../Translations/en";
+import { Translations as DE } from "../Translations/en";
 import { i18nCreateInstanceSync } from "../utils/i18nCreateInstance";
 
 
 
-export const i18nCommon = () => i18nCreateInstanceSync({
+export const i18nSearch = () => i18nCreateInstanceSync({
   lng: 'en',
   interpolation: {escapeValue: false},
   resources: {
     en: {
-      translation: EN_SEARCH_TRANSLATIONS
+      translation: EN.Search
     },
     de: {
-      translation: DE_SEARCH_TRANSLATIONS
+      translation: DE.Search
     }
-  }  
+  },
+  fallbackLng: 'de'  
 })
