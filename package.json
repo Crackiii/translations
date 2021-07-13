@@ -6,8 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "typescript": "tsc",
-    "typegen": "echo '/* eslint-disable */' > src/openapi.d.ts && typegen ../lambda/ApiHandlerFunction/openapi.yml >> src/openapi.d.ts",
-    "build": "npm run openapi && npm run typegen && npm run typescript && npm run bundle-definition"
+    "bundle-definition": "webpack",
+    "build": "npm run typescript && npm run bundle-definition"
   },
   "files": [
     "*.js",
